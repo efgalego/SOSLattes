@@ -1,0 +1,71 @@
+%script{:type => 'text/javascript', :src => 'https://www.google.com/jsapi'}
+%script{:type => 'text/javascript'}
+  google.load('visualization', '1.0', {'packages':['corechart']}); 
+  google.setOnLoadCallback(drawChart);
+  function drawChart() 
+  {  
+  var data = new google.visualization.DataTable();  
+  data.addColumn('string', 'Ano');
+  data.addColumn('number', 'Número Orientações');  
+  data.addRows([
+  -sumario.each_with_index do |(k,v),i|
+    ["#{k}", #{v}]
+    -unless i == sumario.length-1 
+      ,
+  ]);
+        
+  var options =  {
+  width: 800,
+  height: 400,
+  vAxis: {title: "Número de orientações em andamento"},
+  hAxis: {title: "Ano"},
+  legend: {position: "none"},  
+  seriesType: "bars",
+  series: {5: {type: "line"}},
+  
+  };
+  
+  var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+  }
+  
+#chart_div
+%h2= titulo
+%p Número total de itens: #{size}
+- ano = 0
+- for result in results
+  - if ano == 0 or ano != result['ano']['id']
+    - ano = result['ano']['id']
+    - contador = 0
+    %h3.year= ano
+    
+  - contador = contador + 1
+  %table
+    %tr{:valign => 'top'}
+      %td
+        #{contador}. 
+      %td
+        -if !result['idorientando']        
+          #{result['orientando']['id']}.
+        -else
+          -link = 'http://lattes.cnpq.br/' + result['idorientando']['id']
+          %a{:href => link}
+            #{result['orientando']['id']}.                                              
+        %b #{result['tituloDoTrabalho']['id']}.
+        #{result['nomeinstituicao']['id'] + ',' if result['nomeinstituicao']}
+        #{result['nomeagencia']['id'] + '.' if result['nomeagencia']}
+        #{result['ano']['id']}.
+        %br
+        %i
+          %font{:size => '-1'}
+            #{result['tipoDeOrientacao']['id']}:
+            -link = 'http://lattes.cnpq.br/' + result['idorientador']['id']
+            %a{:href => link}
+              #{result['orientador']['id']}
+        %br
+        %font{:size => '-1'}          
+          %a{:href => "/associarOrientacaoComFormacao/#{result['uri']['id']}"}
+            Associar esta orientação com formação de algum membro
+        
+
+

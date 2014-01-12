@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY qualis-capes "http://qualis.capes.gov.br/qualis-capes.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://qualis.capes.gov.br/qualis-capes.owl#"
+     xml:base="http://qualis.capes.gov.br/qualis-capes.owl"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:qualis-capes="http://qualis.capes.gov.br/qualis-capes.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://qualis.capes.gov.br/qualis-capes.owl#classifica -->
+
+    <owl:ObjectProperty rdf:about="#classifica">
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Conferencia"/>
+                    <rdf:Description rdf:about="#Periodico"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://qualis.capes.gov.br/qualis-capes.owl#classificadoNaArea -->
+
+    <owl:ObjectProperty rdf:about="#classificadoNaArea">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="#Area"/>
+        <rdfs:domain rdf:resource="#Classificacao"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://qualis.capes.gov.br/qualis-capes.owl#ehClassificadoPor -->
+
+    <owl:ObjectProperty rdf:about="#ehClassificadoPor">
+        <rdfs:range rdf:resource="#Classificacao"/>
+        <owl:inverseOf rdf:resource="#classifica"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Conferencia"/>
+                    <rdf:Description rdf:about="#Periodico"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://qualis.capes.gov.br/qualis-capes.owl#validoParaAnoBase -->
+
+    <owl:ObjectProperty rdf:about="#validoParaAnoBase">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="#AnoBase"/>
+        <rdfs:domain rdf:resource="#Classificacao"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://qualis.capes.gov.br/qualis-capes.owl#ISSN -->
+
+    <owl:DatatypeProperty rdf:about="#ISSN">
+        <rdfs:domain rdf:resource="#Periodico"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://qualis.capes.gov.br/qualis-capes.owl#ano_base -->
+
+    <owl:DatatypeProperty rdf:about="#ano_base">
+        <rdfs:domain rdf:resource="#AnoBase"/>
+        <rdfs:range rdf:resource="&xsd;gYear"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://qualis.capes.gov.br/qualis-capes.owl#estrato -->
+
+    <owl:DatatypeProperty rdf:about="#estrato">
+        <rdfs:domain rdf:resource="#Classificacao"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://qualis.capes.gov.br/qualis-capes.owl#nome_area -->
+
+    <owl:DatatypeProperty rdf:about="#nome_area">
+        <rdfs:domain rdf:resource="#Area"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://qualis.capes.gov.br/qualis-capes.owl#titulo_conferencia -->
+
+    <owl:DatatypeProperty rdf:about="#titulo_conferencia">
+        <rdfs:domain rdf:resource="#Conferencia"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://qualis.capes.gov.br/qualis-capes.owl#titulo_periodico -->
+
+    <owl:DatatypeProperty rdf:about="#titulo_periodico">
+        <rdfs:domain rdf:resource="#Periodico"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://qualis.capes.gov.br/qualis-capes.owl#AnoBase -->
+
+    <owl:Class rdf:about="#AnoBase"/>
+    
+
+
+    <!-- http://qualis.capes.gov.br/qualis-capes.owl#Area -->
+
+    <owl:Class rdf:about="#Area"/>
+    
+
+
+    <!-- http://qualis.capes.gov.br/qualis-capes.owl#Classificacao -->
+
+    <owl:Class rdf:about="#Classificacao"/>
+    
+
+
+    <!-- http://qualis.capes.gov.br/qualis-capes.owl#Conferencia -->
+
+    <owl:Class rdf:about="#Conferencia">
+        <owl:disjointWith rdf:resource="#Periodico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://qualis.capes.gov.br/qualis-capes.owl#Periodico -->
+
+    <owl:Class rdf:about="#Periodico">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

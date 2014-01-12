@@ -1,0 +1,23 @@
+strict graph grafo2 {
+	graph [bb="0,0,326,338", id=grafo2, overlap=False];
+	node [label="\N", fontsize=8, shape=rectangle, style=filled];
+	0 [label="Ana C. Vieira de Melo [6]", URL="http://lattes.cnpq.br/1225623517319669", color="#003399", fontcolor="#FFFFFF", height="0.25", pos="61,329", width="1.6944"];
+	2 [label="Flavio S. Correa da Silva [10]", URL="http://lattes.cnpq.br/8571722708574643", color="#003399", fontcolor="#FFFFFF", height="0.25", pos="145,201", width="1.9444"];
+	1 [label="Marcelo Finger [10]", URL="http://lattes.cnpq.br/0620986273710878", color="#003399", fontcolor="#FFFFFF", height="0.25", pos="114,265", width="1.3611"];
+	3 [label="Renata Wassermann [19]", URL="http://lattes.cnpq.br/8548608291351316", color="#003399", fontcolor="#FFFFFF", height="0.25", pos="227,137", width="1.6944"];
+	4 [label="Leliane Nunes de Barros [3]", URL="http://lattes.cnpq.br/0348490713417429", color="#003399", fontcolor="#FFFFFF", height="0.25", pos="68,73", width="1.8889"];
+	7 [label="Marcio Moretto Ribeiro [9]", URL="http://lattes.cnpq.br/2153927915438535", color="#003399", fontcolor="#FFFFFF", height="0.25", pos="262,9", width="1.75"];
+	6 [label="Paulo de T. Guerra Oliveira [1]", URL="http://lattes.cnpq.br/5228033768526863", color="#003399", fontcolor="#FFFFFF", height="0.25", pos="227,73", width="2.0278"];
+	5 [label="Fillipe M. Xavier Resina [0]", URL="http://lattes.cnpq.br/5276187175614211", color="#003399", fontcolor="#FFFFFF", height="0.25", pos="204,329", width="1.7778"];
+	0 -- 2 [fontsize=8, label="6.0", lp="50,265", pos="54.396,319.83 44.845,305.34 29.608,276.67 42,256 56.335,232.1 84.985,218 108.44,210.08"];
+	0 -- 1 [fontsize=8, label="1.0", lp="97,297", pos="68.594,319.83 78.669,307.66 96.352,286.31 106.42,274.15"];
+	1 -- 3 [fontsize=8, label="8.0", lp="237,201", pos="154,255.97 178.61,248.17 208.35,234.2 224,210 236.68,190.4 232.68,161.26 229.43,146.42"];
+	1 -- 2 [fontsize=8, label="3.0", lp="138,233", pos="118.44,255.83 124.33,243.66 134.68,222.31 140.57,210.15"];
+	1 -- 4 [fontsize=8, label="1.0", lp="64,169", pos="102.25,255.98 90.516,246.14 73.209,229.22 66,210 48.961,164.56 60.348,104.55 65.677,82.037"];
+	2 -- 3 [fontsize=8, label="2.0", lp="197,169", pos="156.75,191.83 172.34,179.66 199.7,158.31 215.27,146.15"];
+	2 -- 4 [fontsize=8, label="2.0", lp="118,137", pos="139.46,191.79 125.26,168.18 87.639,105.65 73.487,82.122"];
+	4 -- 7 [fontsize=8, label="1.0", lp="183,41", pos="95.384,63.966 132.25,51.803 197.48,30.284 234.44,18.091"];
+	3 -- 6 [fontsize=8, label="1.0", lp="234,105", pos="227,127.83 227,115.66 227,94.31 227,82.153"];
+	3 -- 4 [fontsize=8, label="2.0", lp="169,105", pos="205.48,127.87 187.5,120.29 161.14,109.27 138,100 122.77,93.896 105.57,87.26 92.034,82.094"];
+	3 -- 7 [fontsize=8, label="9.0", lp="319,73", pos="252.09,127.84 271.52,119.27 297.06,104.38 309,82 321.77,58.061 293.35,31.696 275.34,18.152"];
+}

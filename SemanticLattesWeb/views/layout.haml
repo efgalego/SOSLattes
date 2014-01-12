@@ -1,0 +1,50 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", 'xml:lang' => 'pt-br', :lang => 'pt-br'}
+  %head
+    %meta{ 'http-equiv' => 'content-type', 'content' => 'text/html; charset=utf-8' }
+    %title SOS Lattes
+    %link{ :rel => 'stylesheet', :type => 'text/css', :href => '/stylesheets/scriptLattes.css' }
+    %link{ :rel => 'stylesheet', :type => 'text/css', :href => '/stylesheets/jquery.autocomplete.css' }
+    %script{:type => 'text/javascript', :src => 'javascripts/jquery.js'}
+    %script{:type => 'text/javascript', :src => 'javascripts/jquery.autocomplete.js'}
+    %script{:type => 'text/javascript', :src => 'javascripts/effects.js'}
+    :javascript
+      $(document).ready(function() {
+        flash('.global');
+        flash('.notice', 4000);
+        flash('.error', 4000);
+        flash('.success', 4000);
+        $('#q').autocomplete('/questions');
+      });
+  %body
+    #container
+
+      #header        
+        %h1 SOS Lattes 
+        [ 
+        %a.top(href='/') Página Inicial
+        |
+        %a.top(href='/carregarcurriculos') Carregar Novos Membros
+        |
+        %a.top(href='/membros') Lista de Membros
+        |
+        %a.top(href='/inconsistencias') Inconsistências        
+        |
+        %a.top(href='/consultas') Consultas
+        ]        
+
+      #body
+        - if flash.has_key?(:global)
+          %p.flash.global= flash[:global]        
+        - if flash.has_key?(:error)
+          %p.flash.error= flash[:error]
+        - if flash.has_key?(:notice)
+          %p.flash.notice= flash[:notice]
+        - if flash.has_key?(:success)
+          %p.flash.success= flash[:success]
+
+        = yield
+    
+      #footer
+        %p(align = 'center')          
+          SOS Lattes versão 1.0.4

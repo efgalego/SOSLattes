@@ -1,0 +1,29 @@
+%script{:type => 'text/javascript'}  
+  function adicionar(id)
+  {
+  if (ids.value == ''){
+  ids.value = id
+  } else if (ids.value.indexOf(id)==-1){  
+  ids.value = ids.value + ' , ' + id
+  }
+  }
+
+%form{:method => 'post', :action => '/carregar'}
+  %h3 Carregar Currículos				 
+  .field
+    Digite abaixo os id's dos currículos, separados por vírgula:
+  %p
+    %textarea{:name =>'ids', :id => 'ids', :rows => '4', :cols => '160', :value => ''}	
+  %p
+    %input(type='submit' value='Carregar' id='search')
+    %a(href='/restart' class='button')
+      %span(class='button') Limpar Dados
+  
+  - if size > 0
+    %p Sugestão de outros currículos relacionados:
+    - results.each_with_index do |cv,c|
+      -unless c==0 then 
+        =', ' 
+      %a{:href => "javascript:adicionar('#{cv['id']['id']}');"}
+        = cv['nome']['id'].strip
+      

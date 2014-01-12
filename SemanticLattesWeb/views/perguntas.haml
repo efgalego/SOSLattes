@@ -1,0 +1,15 @@
+%form{:method => 'get', :action => '/busca'}
+  %h3 Questão
+  %input{:type => 'text', :name =>'q', :id => 'q', :value => q, :size=> '80'}  
+  %input(type='submit' value='Consultar' id='search')
+      
+- if defined?(results)
+  %h3 Resultado
+  %div
+    - if size and size > 0
+      %p A consulta retornou #{h size} resultado(s).
+      %ul
+        = haml send_to.to_sym, :locals => { :results => results }
+    - else
+      %p A consulta não retornou resultados.
+%br

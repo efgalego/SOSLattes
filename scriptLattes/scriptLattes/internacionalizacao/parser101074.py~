@@ -1,0 +1,25 @@
+#!/usr/bin/python
+# caso 8 http://pubs.acs.orgprocura tag li e a class aff
+import re
+import urllib, urllib2
+import  unicodedata
+from HTMLParserNew import HTMLParser
+class parser101073(HTMLParser):
+    	def __init__(self):
+	    HTMLParser.__init__(self)
+	    self.recording = 0 
+	    self.data = []
+	def handle_starttag(self, tag, attrs):
+	    if tag=='li':
+		   for attr in attrs:
+		        if 'class' == attr[0] and attr[1]=='aff':
+		  	      self.recording = 1
+	def handle_endtag(self, tag):
+	    if tag == 'li':
+		if self.recording == 1:
+	      		self.recording -=1
+	def handle_data(self, data):
+	    if self.recording:			
+			data = ''.join((c for c in unicodedata.normalize('NFD',unicode(data.decode("utf-8"))) if unicodedata.category(c) != 'Mn'))
+			self.data.append(data)
+	

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<parsers>	
+	<parser idDoi='10.1002'>
+    		<tag>div</tag>
+    		<type>id</type>
+    		<name>authorsDetail</name>
+    		<prefixo>,.*,\s*</prefixo>
+    		<posfixo>[\s*|,|;|-|\.|\'|\"]</posfixo>
+  	</parser>
+	<parser idDoi='10.1016'>
+    		<tag>ul</tag>
+    		<type>class</type>
+    		<name>affiliation</name>
+    		<prefixo>,.*,\s*</prefixo>
+    		<posfixo>[,|;|-|\.|\'|\"]</posfixo>
+  	</parser>
+  	<parser idDoi='10.1021'>
+    		<tag>div</tag>
+    		<type>class</type>
+    		<name>affiliations</name>
+    		<prefixo>,.*,\s*</prefixo>
+    		<posfixo>[\s*|,|;|-|\.|\'|\"]</posfixo>
+  	</parser>
+  	<parser idDoi='10.1063'>
+    		<tag>p</tag>
+    		<type>class</type>
+    		<name>affiliation</name>
+    		<prefixo>,.*,\s*</prefixo>
+    		<posfixo>[\s*|,|;|-|\.|\'|\"]</posfixo>
+  	</parser>
+  	<parser idDoi='10.1073'>
+    		<tag>li</tag>
+    		<type>class</type>
+    		<name>aff</name>
+    		<prefixo>,.*,\s*</prefixo>
+    		<posfixo>[\s*|,|;|-|\.|\'|\"]</posfixo>
+  	</parser>
+  	<parser idDoi='10.1074'>
+    		<tag>li</tag>
+    		<type>class</type>
+    		<name>aff</name>
+    		<prefixo>,.*,\s*</prefixo>
+    		<posfixo>[\s*|,|;|-|\.|\'|\"]</posfixo>
+  	</parser>
+	<parser idDoi='10.1088'>
+    		<tag>div</tag>
+    		<type>class</type>
+    		<name>affiliationDetail</name>
+    		<prefixo>,.*,\s*</prefixo>
+    		<posfixo>[\s*|,|;|-|\.|\'|\"]</posfixo>
+  	</parser>
+  	<parser idDoi='10.1103'>
+    		<tag>span</tag>
+    		<type>class</type>
+    		<name>italic</name>
+    		<prefixo>,.*,\s*</prefixo>
+    		<posfixo>[\s*|,|;|-|\.|\'|\"]</posfixo>
+  	</parser>
+  	<parser idDoi='10.1109'>
+    		<tag>div</tag>
+    		<type>id</type>
+    		<name>product-summary-2column</name>
+    		<prefixo>,.*,\s*</prefixo>
+    		<posfixo>[\s*|,|;|-|\.|\'|\"]</posfixo>
+  	</parser>
+  	<parser idDoi='10.1145'>
+    		<tag>a</tag>
+    		<type>title</type>
+    		<name>Institutional Profile Page</name>
+    		<prefixo>,.*,\s*</prefixo>
+    		<posfixo>[\s*|,|;|-|\.|\'|\"]</posfixo>
+  	</parser>
+  	<parser idDoi='10.1186'>
+    		<tag>div</tag>
+    		<type>id</type>
+    		<name>ins_container</name>
+    		<prefixo>,.*,\s*</prefixo>
+    		<posfixo>[\s*|,|;|-|\.|\'|\"]</posfixo>
+  	</parser>
+  	<parser idDoi='10.1364'>
+    		<tag>span</tag>
+    		<type>class</type>
+    		<name>aff</name>
+    		<prefixo>,.*,\s*</prefixo>
+    		<posfixo>[\s*|,|;|-|\.|\'|\"]</posfixo>
+  	</parser>
+	<parser idDoi='10.3390'>
+    		<tag>div</tag>
+    		<type>class</type>
+    		<name>art-affiliations</name>
+    		<prefixo>,.*,\s*</prefixo>
+    		<posfixo>[\s*|,|;|-|\.|\'|\"]</posfixo>
+  	</parser>
+ </parsers>

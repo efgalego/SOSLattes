@@ -1,0 +1,10 @@
+- for result in results
+  %li
+    - livro = result['livro']
+    %h4= livro['titulo']
+    %p Autor: #{h result['pessoa']['nome']}
+    %p Departamento: #{h result['departamento']['nome']}
+    %p Páginas: #{livro['paginas'] || 'N/A'} | Volumes: #{livro['volumes'] || 'N/A'}
+    %p.tags
+      %span.tag.red= livro['idioma']
+      %span.tag.blue= livro['ano']

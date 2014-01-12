@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>             
+<!--  An excerpt of an egocentric social network  -->             
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">             
+<graph edgedefault="undirected">             
+<!-- data schema -->             
+<key id="name" for="node" attr.name="name" attr.type="string"/>             
+<key id="nickname" for="node" attr.name="nickname" attr.type="string"/>             
+<key id="gender" for="node" attr.name="gender" attr.type="string"/>             
+<key id="image" for="node" attr.name="image" attr.type="string"/>             
+<key id="link" for="node" attr.name="link" attr.type="string"/>             
+<key id="amount" for="edge" attr.name="amount" attr.type="int"/>             
+<key id="pubs" for="node" attr.name="pubs" attr.type="int"/>
+<!-- nodes -->                 
+<node id="0">                 
+<data key="name">Ana Cristina Vieira de Melo</data>                 
+<data key="nickname">MELO, Ana C. V. de;de Melo, Ana C.V.</data>                 
+<data key="gender">M</data>                 
+<data key="image">http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4787816D2</data>                 
+<data key="link">http://lattes.cnpq.br/1225623517319669</data>                 
+<data key="pubs">6</data>                 
+</node>
+<!-- nodes -->                 
+<node id="1">                 
+<data key="name">Marcelo Finger</data>                 
+<data key="nickname">FINGER, M.;Finger, Marcelo;FINGER, M</data>                 
+<data key="gender">M</data>                 
+<data key="image">http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4788570D8</data>                 
+<data key="link">http://lattes.cnpq.br/0620986273710878</data>                 
+<data key="pubs">10</data>                 
+</node>
+<!-- nodes -->                 
+<node id="2">                 
+<data key="name">Flavio Soares Correa da Silva</data>                 
+<data key="nickname">CORREA DA SILVA, F. S.;CORREA DA SILVA, FLÁVIO SOARES;CORRÊA DA SILVA, FLÁVIO SOARES;DA SILVA, FLAVIO;CORREA DA SILVA, FLAVIO S.;Flavio S. Correa da Silva</data>                 
+<data key="gender">M</data>                 
+<data key="image">http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4781644J4</data>                 
+<data key="link">http://lattes.cnpq.br/8571722708574643</data>                 
+<data key="pubs">10</data>                 
+</node>
+<!-- nodes -->                 
+<node id="3">                 
+<data key="name">Renata Wassermann</data>                 
+<data key="nickname">WASSERMANN, R.;Wassermann, R.;Wassermann, Renata</data>                 
+<data key="gender">M</data>                 
+<data key="image">http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4795401A3</data>                 
+<data key="link">http://lattes.cnpq.br/8548608291351316</data>                 
+<data key="pubs">19</data>                 
+</node>
+<!-- nodes -->                 
+<node id="4">                 
+<data key="name">Leliane Nunes de Barros</data>                 
+<data key="nickname">BARROS, L. N.;de Barros, Leliane Nunes</data>                 
+<data key="gender">M</data>                 
+<data key="image">http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4785528U0</data>                 
+<data key="link">http://lattes.cnpq.br/0348490713417429</data>                 
+<data key="pubs">3</data>                 
+</node>
+<!-- nodes -->                 
+<node id="5">                 
+<data key="name">Fillipe Manoel Xavier Resina</data>                 
+<data key="nickname">RESINA, F. M. X.</data>                 
+<data key="gender">M</data>                 
+<data key="image">http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4489909J6</data>                 
+<data key="link">http://lattes.cnpq.br/5276187175614211</data>                 
+<data key="pubs">0</data>                 
+</node>
+<!-- nodes -->                 
+<node id="6">                 
+<data key="name">Paulo de Tarso Guerra Oliveira</data>                 
+<data key="nickname">GUERRA, Paulo T.;OLIVEIRA, Paulo de T. G.</data>                 
+<data key="gender">M</data>                 
+<data key="image">http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4227707P6</data>                 
+<data key="link">http://lattes.cnpq.br/5228033768526863</data>                 
+<data key="pubs">1</data>                 
+</node>
+<!-- nodes -->                 
+<node id="7">                 
+<data key="name">Marcio Moretto Ribeiro</data>                 
+<data key="nickname">RIBEIRO, M. M.;Ribeiro, M. M.;RIBEIRO, MÁRCIO M.</data>                 
+<data key="gender">M</data>                 
+<data key="image">http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4732584Y4</data>                 
+<data key="link">http://lattes.cnpq.br/2153927915438535</data>                 
+<data key="pubs">9</data>                 
+</node>
+<!-- edges -->                         
+<edge source="0" target="1">                         
+<data key="amount">1.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="0" target="2">                         
+<data key="amount">6.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="1" target="0">                         
+<data key="amount">1.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="1" target="2">                         
+<data key="amount">3.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="1" target="3">                         
+<data key="amount">8.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="1" target="4">                         
+<data key="amount">1.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="2" target="0">                         
+<data key="amount">6.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="2" target="1">                         
+<data key="amount">3.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="2" target="3">                         
+<data key="amount">2.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="2" target="4">                         
+<data key="amount">2.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="3" target="1">                         
+<data key="amount">8.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="3" target="2">                         
+<data key="amount">2.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="3" target="4">                         
+<data key="amount">2.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="3" target="6">                         
+<data key="amount">1.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="3" target="7">                         
+<data key="amount">9.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="4" target="1">                         
+<data key="amount">1.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="4" target="2">                         
+<data key="amount">2.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="4" target="3">                         
+<data key="amount">2.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="4" target="7">                         
+<data key="amount">1.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="6" target="3">                         
+<data key="amount">1.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="7" target="3">                         
+<data key="amount">9.0</data>                         
+</edge>
+<!-- edges -->                         
+<edge source="7" target="4">                         
+<data key="amount">1.0</data>                         
+</edge>
+</graph>            
+</graphml>

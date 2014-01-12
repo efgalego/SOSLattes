@@ -1,0 +1,37 @@
+<html>
+<head>
+  <link href="stylesheet/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="javascript/jquery.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('#forms').submit(function() {
+      var query = $('#query').val();
+      var data = { 'query' :  query };
+      var callback = function(data) {
+        $('#result').html('<pre>'+ data + '</pre>');
+      };
+      $.post('/query/json', data, callback);
+      return false;
+    });
+  });
+  </script>
+  </head>
+<body>
+  <form id="forms" action="/query" method="post">
+    <textarea id="query" name="query" cols="80" rows="20">
+PREFIX lattes: <http://www.semanticlattes.com.br/curriculo#>
+PREFIX qualis: <http://qualis.capes.gov.br/qualis-capes.owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+SELECT *
+WHERE {
+?p rdf:type lattes:Pessoa.
+}
+    </textarea>
+    <input type="submit" value="answer" />
+  </form>
+  <div id="result"></div>
+</body>
+</html>

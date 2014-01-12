@@ -1,0 +1,759 @@
+@prefix :        <http://www.semanticlattes.com.br/curriculo#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl2xml:  <http://www.w3.org/2006/12/owl2-xml#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix curriculo:  <http://www.semanticlattes.com.br/curriculo#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+curriculo:idioma
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+curriculo:paginaFinal
+      a       owl:DatatypeProperty .
+
+curriculo:TrabalhoTecnico
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:OutrasPublicacoes .
+
+curriculo:Publicacao
+      a       owl:Class .
+
+curriculo:Orientacao
+      a       owl:Class .
+
+curriculo:meioDeDivulgacao
+      a       owl:DatatypeProperty .
+
+curriculo:TituloDoutor
+      a       owl:Thing , curriculo:Doutor .
+
+curriculo:OrientacaoMestrado
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Orientacao ;
+      owl:equivalentClass
+              [ a       owl:Restriction ;
+                owl:onClass curriculo:DissertacaoMestrado ;
+                owl:onProperty curriculo:temDissertacaoMestrado ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+curriculo:temAutor
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Publicacao ;
+      rdfs:range curriculo:Pessoa ;
+      owl:inverseOf curriculo:publicou .
+
+curriculo:OrientacaoPosDoutorado
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Orientacao .
+
+curriculo:Anais
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Publicacao ;
+      owl:equivalentClass
+              [ a       owl:Restriction ;
+                owl:onClass curriculo:EdicaoConferencia ;
+                owl:onProperty curriculo:ehPublicadoEmEdicaoConferencia ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+curriculo:editora
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+curriculo:cidade
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+curriculo:instituicao
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+curriculo:temVinculoCom
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Pessoa ;
+      rdfs:range curriculo:Instituicao .
+
+curriculo:EdicaoConferencia
+      a       owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+curriculo:Livro
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Publicacao .
+
+curriculo:Titulo
+      a       owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+curriculo:emAndamentoSobOrientacaoDe
+      a       owl:ObjectProperty ;
+      rdfs:subPropertyOf curriculo:sobOrientacaoDe ;
+      owl:propertyChainAxiom
+              (curriculo:sendoElaboradoPor curriculo:ehOrientadoPor) .
+
+curriculo:ehOrientadorDeDoutorando
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Pesquisador ;
+      rdfs:range curriculo:Doutorando ;
+      rdfs:subPropertyOf curriculo:ehOrientadorDe .
+
+curriculo:pais
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+curriculo:TeseDoutorado
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Trabalho .
+
+curriculo:fasciculo
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+[]    a       owl:AllDisjointClasses ;
+      owl:members (curriculo:ArtigoAceito curriculo:ArtigoConferencia curriculo:ArtigoPeriodico) .
+
+curriculo:temAtividade
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Pessoa .
+
+curriculo:statusOrientacao
+      a       owl:DatatypeProperty .
+
+curriculo:estahElaborando
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Estudante ;
+      rdfs:range curriculo:Trabalho ;
+      owl:inverseOf curriculo:sendoElaboradoPor .
+
+curriculo:ano
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:gYear .
+
+curriculo:Professor
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Pessoa ;
+      owl:equivalentClass
+              [ a       owl:Restriction ;
+                owl:onProperty curriculo:trabalhaNoDepartamento ;
+                owl:someValuesFrom curriculo:Departamento
+              ] .
+
+curriculo:TituloGraduado
+      a       owl:Thing , curriculo:Graduado .
+
+curriculo:Doutorando
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Estudante ;
+      owl:equivalentClass
+              [ a       owl:Class ;
+                owl:intersectionOf ([ a       owl:Restriction ;
+                            owl:onProperty curriculo:ehOrientadoPor ;
+                            owl:someValuesFrom curriculo:Pesquisador
+                          ] [ a       owl:Restriction ;
+                            owl:onProperty curriculo:estahElaborando ;
+                            owl:someValuesFrom curriculo:TeseDoutorado
+                          ])
+              ] .
+
+curriculo:localDeApresentacao
+      a       owl:DatatypeProperty ;
+      rdfs:subPropertyOf curriculo:local .
+
+curriculo:serie
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+curriculo:ehTituloDe
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Titulo ;
+      rdfs:range curriculo:Pessoa ;
+      owl:inverseOf curriculo:temTitulo .
+
+curriculo:Instituicao
+      a       owl:Class .
+
+curriculo:ehPublicadoEmEdicaoConferencia
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Anais ;
+      rdfs:range curriculo:EdicaoConferencia ;
+      rdfs:subPropertyOf curriculo:ehPublicadoEm ;
+      owl:inverseOf curriculo:possuiAnais .
+
+curriculo:ehEdicaoDoPeriodico
+      a       owl:FunctionalProperty , owl:ObjectProperty ;
+      rdfs:domain curriculo:EdicaoPeriodico ;
+      rdfs:range curriculo:Periodico .
+
+curriculo:ehCoAutorCom
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Pessoa ;
+      rdfs:range curriculo:Pessoa ;
+      owl:propertyChainAxiom
+              (curriculo:ehPrincipalAutorDe curriculo:temCoAutor) , (curriculo:ehCoAutorDe curriculo:temPrincipalAutor) .
+
+curriculo:cidadeEditora
+      a       owl:DatatypeProperty ;
+      rdfs:subPropertyOf curriculo:cidade .
+
+curriculo:paisDePublicacao
+      a       owl:DatatypeProperty ;
+      rdfs:subPropertyOf curriculo:pais .
+
+curriculo:temOrientado
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Orientacao ;
+      rdfs:range curriculo:Estudante .
+
+curriculo:localDePublicacao
+      a       owl:DatatypeProperty ;
+      rdfs:subPropertyOf curriculo:local .
+
+curriculo:instituicaoPromotora
+      a       owl:DatatypeProperty ;
+      rdfs:subPropertyOf curriculo:instituicao .
+
+curriculo:trabalhaNoDepartamento
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Professor ;
+      rdfs:range curriculo:Departamento ;
+      rdfs:subPropertyOf curriculo:temVinculoCom .
+
+curriculo:edicao
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:unsignedInt .
+
+curriculo:numeroDePaginas
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:unsignedInt .
+
+curriculo:finalidade
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+curriculo:possuiOrientacao
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Pesquisador ;
+      rdfs:range curriculo:Orientacao ;
+      owl:inverseOf curriculo:temOrientador .
+
+curriculo:disponibilidade
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+curriculo:ehVinculadoCom
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Instituicao ;
+      rdfs:range curriculo:Pessoa ;
+      owl:propertyDisjointWith
+              curriculo:temVinculoCom .
+
+curriculo:temTrabalho
+      a       owl:FunctionalProperty , owl:ObjectProperty ;
+      rdfs:domain curriculo:Orientacao ;
+      rdfs:range curriculo:Trabalho .
+
+curriculo:temFuncionario
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Departamento ;
+      rdfs:range curriculo:Professor ;
+      rdfs:subPropertyOf curriculo:ehVinculadoCom ;
+      owl:inverseOf curriculo:trabalhaNoDepartamento .
+
+curriculo:possuiCapitulo
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Livro ;
+      rdfs:range curriculo:Capitulo ;
+      owl:inverseOf curriculo:ehCapituloDoLivro .
+
+curriculo:possuiArtigoPublicadoEmConferencia
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Conferencia ;
+      rdfs:range curriculo:ArtigoConferencia ;
+      rdfs:subPropertyOf curriculo:possuiArtigoPublicado ;
+      owl:inverseOf curriculo:ehPublicadoEmConferencia ;
+      owl:propertyChainAxiom
+              (curriculo:possuiEdicaoConferencia curriculo:possuiAnais curriculo:possuiArtigoPublicadoEmAnais) .
+
+curriculo:ConferenciaInternacional
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Conferencia ;
+      owl:disjointWith curriculo:ConferenciaNacional .
+
+curriculo:EdicaoPeriodico
+      a       owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+curriculo:anoDePublicacao
+      a       owl:DatatypeProperty ;
+      rdfs:subPropertyOf curriculo:ano .
+
+curriculo:RelatorioTecnico
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:OutrasPublicacoes .
+
+curriculo:OrientacaoDoutorado
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Orientacao ;
+      owl:equivalentClass
+              [ a       owl:Restriction ;
+                owl:onClass curriculo:TeseDoutorado ;
+                owl:onProperty curriculo:temTeseDoutorado ;
+                owl:qualifiedCardinality
+                        "1"^^xsd:nonNegativeInteger
+              ] .
+
+curriculo:dataDePublicacao
+      a       owl:DatatypeProperty .
+
+curriculo:duracao
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:unsignedInt .
+
+curriculo:DissertacaoMestrado
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Trabalho ;
+      owl:disjointWith curriculo:TeseDoutorado .
+
+<http://www.semanticlattes.com.br/curriculo>
+      a       owl:Ontology .
+
+curriculo:tituloIngles
+      a       owl:DatatypeProperty ;
+      rdfs:subPropertyOf curriculo:titulo .
+
+curriculo:Graduado
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Titulo .
+
+curriculo:local
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+curriculo:ehCoAutorDe
+      a       owl:ObjectProperty ;
+      rdfs:subPropertyOf curriculo:ehAutorDe ;
+      owl:inverseOf curriculo:temCoAutor .
+
+curriculo:ehOrientadorDeIC
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Pesquisador ;
+      rdfs:range curriculo:EstudanteIC ;
+      rdfs:subPropertyOf curriculo:ehOrientadorDe .
+
+curriculo:Texto
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Publicacao .
+
+curriculo:ehAutorDe
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Pessoa ;
+      rdfs:range curriculo:Publicacao ;
+      owl:equivalentProperty
+              curriculo:publicou ;
+      owl:inverseOf curriculo:publicadoPor , curriculo:temAutor .
+
+curriculo:paginaInicial
+      a       owl:DatatypeProperty .
+
+curriculo:temPrincipalAutor
+      a       owl:ObjectProperty ;
+      rdfs:subPropertyOf curriculo:temAutor ;
+      owl:inverseOf curriculo:ehPrincipalAutorDe .
+
+curriculo:Doutor
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Titulo .
+
+curriculo:ehOrientadorDe
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Pesquisador ;
+      rdfs:range curriculo:Estudante .
+
+[]    a       owl:AllDisjointClasses ;
+      owl:members (curriculo:Anais curriculo:Artigo curriculo:Capitulo curriculo:Livro curriculo:OutrasPublicacoes curriculo:Patente curriculo:Texto) .
+
+curriculo:publicadoPor
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Publicacao ;
+      rdfs:range curriculo:Pessoa ;
+      owl:equivalentProperty
+              curriculo:temAutor .
+
+curriculo:OutrasPublicacoes
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Publicacao .
+
+curriculo:ISSN
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+[]    a       owl:AllDisjointClasses ;
+      owl:members (curriculo:Conferencia curriculo:EdicaoConferencia curriculo:EdicaoPeriodico curriculo:Instituicao curriculo:Periodico curriculo:Pessoa curriculo:Publicacao curriculo:Titulo) .
+
+curriculo:ConferenciaNacional
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Conferencia .
+
+[]    a       owl:AllDisjointProperties ;
+      owl:members (curriculo:ehOrientadorDeDoutorando curriculo:ehOrientadorDeIC curriculo:ehOrientadorDeMestrando) .
+
+curriculo:Trabalho
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Publicacao .
+
+curriculo:TextoRevista
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Texto .
+
+curriculo:ArtigoPeriodico
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Artigo ;
+      owl:equivalentClass
+              [ a       owl:Restriction ;
+                owl:onProperty curriculo:ehPublicadoEmEdicaoPeriodico ;
+                owl:someValuesFrom curriculo:EdicaoPeriodico
+              ] .
+
+curriculo:sobOrientacaoDe
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Publicacao .
+
+curriculo:CursoMinistrado
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:OutrasPublicacoes .
+
+curriculo:ehCapituloDoLivro
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Capitulo ;
+      rdfs:range curriculo:Livro .
+
+curriculo:Conferencia
+      a       owl:Class .
+
+curriculo:volume
+      a       owl:DatatypeProperty .
+
+curriculo:OrganizacaoEvento
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:OutrasPublicacoes .
+
+curriculo:numeroDeVolumes
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:unsignedInt .
+
+curriculo:MaterialDidatico
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:OutrasPublicacoes .
+
+curriculo:ehPublicadoEm
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Publicacao .
+
+curriculo:foiOrientadoPor
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Estudante ;
+      rdfs:range curriculo:Pesquisador .
+
+curriculo:ehPublicadoEmAnais
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:ArtigoConferencia ;
+      rdfs:range curriculo:Anais ;
+      rdfs:subPropertyOf curriculo:ehPublicadoEm .
+
+curriculo:TituloMestre
+      a       owl:Thing , curriculo:Mestre .
+
+[]    a       owl:AllDisjointClasses ;
+      owl:members (curriculo:Doutorando curriculo:EstudanteIC curriculo:Mestrando) .
+
+curriculo:Software
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:OutrasPublicacoes .
+
+curriculo:possuiArtigoPublicado
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (curriculo:Anais curriculo:Conferencia curriculo:EdicaoPeriodico)
+              ] ;
+      rdfs:range curriculo:Artigo .
+
+curriculo:periodoDePublicacao
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf curriculo:dataDePublicacao .
+
+curriculo:ConferenciaLocal
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:ConferenciaRegional .
+
+curriculo:ehPublicadoEmConferencia
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (curriculo:Anais curriculo:ArtigoConferencia)
+              ] ;
+      rdfs:range curriculo:Conferencia ;
+      rdfs:subPropertyOf curriculo:ehPublicadoEm ;
+      owl:propertyChainAxiom
+              (curriculo:ehPublicadoEmAnais curriculo:ehPublicadoEmEdicaoConferencia curriculo:ehEdicaoDaConferencia) .
+
+curriculo:possuiArtigoPublicadoEmAnais
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Anais ;
+      rdfs:range curriculo:ArtigoConferencia ;
+      rdfs:subPropertyOf curriculo:possuiArtigoPublicado ;
+      owl:inverseOf curriculo:ehPublicadoEmAnais .
+
+curriculo:Artigo
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Publicacao .
+
+curriculo:ArtigoConferencia
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Artigo ;
+      owl:equivalentClass
+              [ a       owl:Restriction ;
+                owl:onProperty curriculo:ehPublicadoEmAnais ;
+                owl:someValuesFrom curriculo:Anais
+              ] .
+
+curriculo:instituicaoFinanciadora
+      a       owl:DatatypeProperty ;
+      rdfs:subPropertyOf curriculo:instituicao .
+
+curriculo:nome
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+curriculo:Patente
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Publicacao .
+
+curriculo:temOrientador
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Orientacao ;
+      rdfs:range curriculo:Pesquisador .
+
+curriculo:ehPublicadoEmEdicaoPeriodico
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:ArtigoPeriodico ;
+      rdfs:range curriculo:EdicaoPeriodico ;
+      rdfs:subPropertyOf curriculo:ehPublicadoEm .
+
+curriculo:natureza
+      a       owl:DatatypeProperty .
+
+curriculo:ambiente
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+curriculo:publicou
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Pessoa ;
+      rdfs:range curriculo:Publicacao ;
+      owl:inverseOf curriculo:publicadoPor .
+
+curriculo:cidadeDoTrabalho
+      a       owl:DatatypeProperty ;
+      rdfs:subPropertyOf curriculo:cidade .
+
+curriculo:Pessoa
+      a       owl:Class .
+
+curriculo:ehPrincipalAutorDe
+      a       owl:ObjectProperty ;
+      rdfs:subPropertyOf curriculo:ehAutorDe .
+
+curriculo:Capitulo
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Publicacao .
+
+curriculo:titulo
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+curriculo:Mestrando
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Estudante ;
+      owl:equivalentClass
+              [ a       owl:Class ;
+                owl:intersectionOf ([ a       owl:Restriction ;
+                            owl:onProperty curriculo:ehOrientadoPor ;
+                            owl:someValuesFrom curriculo:Pesquisador
+                          ] [ a       owl:Restriction ;
+                            owl:onProperty curriculo:estahElaborando ;
+                            owl:someValuesFrom curriculo:DissertacaoMestrado
+                          ])
+              ] .
+
+curriculo:ehOrientadoPor
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Estudante ;
+      rdfs:range curriculo:Pesquisador ;
+      owl:inverseOf curriculo:ehOrientadorDe .
+
+curriculo:temTeseDoutorado
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:OrientacaoDoutorado ;
+      rdfs:range curriculo:TeseDoutorado ;
+      rdfs:subPropertyOf curriculo:temTrabalho .
+
+curriculo:possuiArtigoPublicadoEmEdicaoPeriodico
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:EdicaoPeriodico ;
+      rdfs:range curriculo:ArtigoPeriodico ;
+      rdfs:subPropertyOf curriculo:possuiArtigoPublicado ;
+      owl:inverseOf curriculo:ehPublicadoEmEdicaoPeriodico .
+
+curriculo:temCoAutor
+      a       owl:ObjectProperty ;
+      rdfs:subPropertyOf curriculo:temAutor ;
+      owl:propertyDisjointWith
+              curriculo:temPrincipalAutor .
+
+curriculo:ISBN
+      a       owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+curriculo:concluidoSobOrientacaoDe
+      a       owl:ObjectProperty ;
+      rdfs:subPropertyOf curriculo:sobOrientacaoDe ;
+      owl:propertyChainAxiom
+              (curriculo:publicadoPor curriculo:foiOrientadoPor) .
+
+curriculo:sendoElaboradoPor
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Trabalho ;
+      rdfs:range curriculo:Estudante .
+
+curriculo:TextoJornal
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Texto ;
+      owl:disjointWith curriculo:TextoRevista .
+
+curriculo:Periodico
+      a       owl:Class .
+
+owl:Thing
+      a       owl:Class .
+
+curriculo:possuiEdicaoPeriodico
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Periodico ;
+      rdfs:range curriculo:EdicaoPeriodico ;
+      owl:inverseOf curriculo:ehEdicaoDoPeriodico .
+
+curriculo:possuiEdicaoConferencia
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Conferencia ;
+      rdfs:range curriculo:EdicaoConferencia .
+
+curriculo:Pesquisador
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Pessoa ;
+      owl:equivalentClass
+              [ a       owl:Restriction ;
+                owl:onProperty curriculo:publicou ;
+                owl:someValuesFrom curriculo:Publicacao
+              ] .
+
+curriculo:plataforma
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+curriculo:temDissertacaoMestrado
+      a       owl:FunctionalProperty , owl:ObjectProperty ;
+      rdfs:domain curriculo:OrientacaoMestrado ;
+      rdfs:range curriculo:DissertacaoMestrado ;
+      rdfs:subPropertyOf curriculo:temTrabalho .
+
+curriculo:ehOrientadorDeMestrando
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Pesquisador ;
+      rdfs:range curriculo:Mestrando ;
+      rdfs:subPropertyOf curriculo:ehOrientadorDe .
+
+curriculo:anoDeRealizacao
+      a       owl:DatatypeProperty ;
+      rdfs:subPropertyOf curriculo:ano .
+
+curriculo:ApresentacaoTrabalho
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:OutrasPublicacoes .
+
+curriculo:Mestre
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Titulo .
+
+curriculo:ConferenciaRegional
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:ConferenciaNacional .
+
+curriculo:registrou
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Pessoa ;
+      rdfs:range curriculo:Patente ;
+      owl:inverseOf curriculo:registradoPor .
+
+curriculo:temTitulo
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Pessoa ;
+      rdfs:range curriculo:Titulo .
+
+[]    a       owl:AllDisjointClasses ;
+      owl:members (curriculo:ApresentacaoTrabalho curriculo:CursoMinistrado curriculo:MaterialDidatico curriculo:OrganizacaoEvento curriculo:RelatorioTecnico curriculo:Software curriculo:TrabalhoTecnico) .
+
+curriculo:publicouCom
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Pessoa ;
+      rdfs:range curriculo:Pessoa ;
+      owl:propertyChainAxiom
+              (curriculo:ehAutorDe curriculo:temAutor) .
+
+curriculo:EstudanteIC
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Estudante .
+
+curriculo:Departamento
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Instituicao .
+
+curriculo:registradoPor
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Patente ;
+      rdfs:range curriculo:Pessoa .
+
+curriculo:ehEdicaoDaConferencia
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:EdicaoConferencia ;
+      rdfs:range curriculo:Conferencia ;
+      owl:inverseOf curriculo:possuiEdicaoConferencia .
+
+curriculo:nivelDoCurso
+      a       owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+curriculo:orientou
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:Pesquisador ;
+      rdfs:range curriculo:Estudante ;
+      owl:inverseOf curriculo:foiOrientadoPor .
+
+curriculo:Estudante
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Pessoa .
+
+curriculo:possuiAnais
+      a       owl:ObjectProperty ;
+      rdfs:domain curriculo:EdicaoConferencia ;
+      rdfs:range curriculo:Anais .
+
+curriculo:ArtigoAceito
+      a       owl:Class ;
+      rdfs:subClassOf curriculo:Artigo .

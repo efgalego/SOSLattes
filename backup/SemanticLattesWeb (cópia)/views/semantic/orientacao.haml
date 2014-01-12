@@ -1,0 +1,9 @@
+- for result in results
+  %li
+    %h4= result['trabalho']['titulo']
+    %p Orientador: #{h result['orientador']['nome']}
+    %p Orientado: #{h result['orientado']['nome']}
+    %p
+      %span.tag.red= result['orientacao']['status'].sub('_', ' ')
+      %span.tag.blue= result['trabalho']['ano'] || 'N/A'
+      %span.tag= result['trabalho']['idioma'] || 'N/A'

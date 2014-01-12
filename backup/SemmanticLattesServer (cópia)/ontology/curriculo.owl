@@ -1,0 +1,1485 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY curriculo "http://www.semanticlattes.com.br/curriculo#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticlattes.com.br/curriculo#"
+     xml:base="http://www.semanticlattes.com.br/curriculo"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:curriculo="http://www.semanticlattes.com.br/curriculo#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#concluidoSobOrientacaoDe -->
+
+    <owl:ObjectProperty rdf:about="#concluidoSobOrientacaoDe">
+        <rdfs:subPropertyOf rdf:resource="#sobOrientacaoDe"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="#publicadoPor"/>
+            <rdf:Description rdf:about="#foiOrientadoPor"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehAutorDe -->
+
+    <owl:ObjectProperty rdf:about="#ehAutorDe">
+        <rdfs:domain rdf:resource="#Pessoa"/>
+        <rdfs:range rdf:resource="#Publicacao"/>
+        <owl:inverseOf rdf:resource="#publicadoPor"/>
+        <owl:equivalentProperty rdf:resource="#publicou"/>
+        <owl:inverseOf rdf:resource="#temAutor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehCapituloDoLivro -->
+
+    <owl:ObjectProperty rdf:about="#ehCapituloDoLivro">
+        <rdfs:domain rdf:resource="#Capitulo"/>
+        <rdfs:range rdf:resource="#Livro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehCoAutorCom -->
+
+    <owl:ObjectProperty rdf:about="#ehCoAutorCom">
+        <rdfs:domain rdf:resource="#Pessoa"/>
+        <rdfs:range rdf:resource="#Pessoa"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="#ehCoAutorDe"/>
+            <rdf:Description rdf:about="#temPrincipalAutor"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="#ehPrincipalAutorDe"/>
+            <rdf:Description rdf:about="#temCoAutor"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehCoAutorDe -->
+
+    <owl:ObjectProperty rdf:about="#ehCoAutorDe">
+        <rdfs:subPropertyOf rdf:resource="#ehAutorDe"/>
+        <owl:inverseOf rdf:resource="#temCoAutor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehEdicaoDaConferencia -->
+
+    <owl:ObjectProperty rdf:about="#ehEdicaoDaConferencia">
+        <rdfs:range rdf:resource="#Conferencia"/>
+        <rdfs:domain rdf:resource="#EdicaoConferencia"/>
+        <owl:inverseOf rdf:resource="#possuiEdicaoConferencia"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehEdicaoDoPeriodico -->
+
+    <owl:ObjectProperty rdf:about="#ehEdicaoDoPeriodico">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#EdicaoPeriodico"/>
+        <rdfs:range rdf:resource="#Periodico"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehOrientadoPor -->
+
+    <owl:ObjectProperty rdf:about="#ehOrientadoPor">
+        <rdfs:domain rdf:resource="#Estudante"/>
+        <rdfs:range rdf:resource="#Pesquisador"/>
+        <owl:inverseOf rdf:resource="#ehOrientadorDe"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehOrientadorDe -->
+
+    <owl:ObjectProperty rdf:about="#ehOrientadorDe">
+        <rdfs:range rdf:resource="#Estudante"/>
+        <rdfs:domain rdf:resource="#Pesquisador"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehOrientadorDeDoutorando -->
+
+    <owl:ObjectProperty rdf:about="#ehOrientadorDeDoutorando">
+        <rdfs:range rdf:resource="#Doutorando"/>
+        <rdfs:domain rdf:resource="#Pesquisador"/>
+        <rdfs:subPropertyOf rdf:resource="#ehOrientadorDe"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehOrientadorDeIC -->
+
+    <owl:ObjectProperty rdf:about="#ehOrientadorDeIC">
+        <rdfs:range rdf:resource="#EstudanteIC"/>
+        <rdfs:domain rdf:resource="#Pesquisador"/>
+        <rdfs:subPropertyOf rdf:resource="#ehOrientadorDe"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehOrientadorDeMestrando -->
+
+    <owl:ObjectProperty rdf:about="#ehOrientadorDeMestrando">
+        <rdfs:range rdf:resource="#Mestrando"/>
+        <rdfs:domain rdf:resource="#Pesquisador"/>
+        <rdfs:subPropertyOf rdf:resource="#ehOrientadorDe"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehPrincipalAutorDe -->
+
+    <owl:ObjectProperty rdf:about="#ehPrincipalAutorDe">
+        <rdfs:subPropertyOf rdf:resource="#ehAutorDe"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehPublicadoEm -->
+
+    <owl:ObjectProperty rdf:about="#ehPublicadoEm">
+        <rdfs:domain rdf:resource="#Publicacao"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehPublicadoEmAnais -->
+
+    <owl:ObjectProperty rdf:about="#ehPublicadoEmAnais">
+        <rdfs:range rdf:resource="#Anais"/>
+        <rdfs:domain rdf:resource="#ArtigoConferencia"/>
+        <rdfs:subPropertyOf rdf:resource="#ehPublicadoEm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehPublicadoEmConferencia -->
+
+    <owl:ObjectProperty rdf:about="#ehPublicadoEmConferencia">
+        <rdfs:range rdf:resource="#Conferencia"/>
+        <rdfs:subPropertyOf rdf:resource="#ehPublicadoEm"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Anais"/>
+                    <rdf:Description rdf:about="#ArtigoConferencia"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="#ehPublicadoEmAnais"/>
+            <rdf:Description rdf:about="#ehPublicadoEmEdicaoConferencia"/>
+            <rdf:Description rdf:about="#ehEdicaoDaConferencia"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehPublicadoEmEdicaoConferencia -->
+
+    <owl:ObjectProperty rdf:about="#ehPublicadoEmEdicaoConferencia">
+        <rdfs:domain rdf:resource="#Anais"/>
+        <rdfs:range rdf:resource="#EdicaoConferencia"/>
+        <rdfs:subPropertyOf rdf:resource="#ehPublicadoEm"/>
+        <owl:inverseOf rdf:resource="#possuiAnais"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehPublicadoEmEdicaoPeriodico -->
+
+    <owl:ObjectProperty rdf:about="#ehPublicadoEmEdicaoPeriodico">
+        <rdfs:domain rdf:resource="#ArtigoPeriodico"/>
+        <rdfs:range rdf:resource="#EdicaoPeriodico"/>
+        <rdfs:subPropertyOf rdf:resource="#ehPublicadoEm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehTituloDe -->
+
+    <owl:ObjectProperty rdf:about="#ehTituloDe">
+        <rdfs:range rdf:resource="#Pessoa"/>
+        <rdfs:domain rdf:resource="#Titulo"/>
+        <owl:inverseOf rdf:resource="#temTitulo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ehVinculadoCom -->
+
+    <owl:ObjectProperty rdf:about="#ehVinculadoCom">
+        <rdfs:domain rdf:resource="#Instituicao"/>
+        <rdfs:range rdf:resource="#Pessoa"/>
+        <owl:propertyDisjointWith rdf:resource="#temVinculoCom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#emAndamentoSobOrientacaoDe -->
+
+    <owl:ObjectProperty rdf:about="#emAndamentoSobOrientacaoDe">
+        <rdfs:subPropertyOf rdf:resource="#sobOrientacaoDe"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="#sendoElaboradoPor"/>
+            <rdf:Description rdf:about="#ehOrientadoPor"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#estahElaborando -->
+
+    <owl:ObjectProperty rdf:about="#estahElaborando">
+        <rdfs:domain rdf:resource="#Estudante"/>
+        <rdfs:range rdf:resource="#Trabalho"/>
+        <owl:inverseOf rdf:resource="#sendoElaboradoPor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#foiOrientadoPor -->
+
+    <owl:ObjectProperty rdf:about="#foiOrientadoPor">
+        <rdfs:domain rdf:resource="#Estudante"/>
+        <rdfs:range rdf:resource="#Pesquisador"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#orientou -->
+
+    <owl:ObjectProperty rdf:about="#orientou">
+        <rdfs:range rdf:resource="#Estudante"/>
+        <rdfs:domain rdf:resource="#Pesquisador"/>
+        <owl:inverseOf rdf:resource="#foiOrientadoPor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#possuiAnais -->
+
+    <owl:ObjectProperty rdf:about="#possuiAnais">
+        <rdfs:range rdf:resource="#Anais"/>
+        <rdfs:domain rdf:resource="#EdicaoConferencia"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#possuiArtigoPublicado -->
+
+    <owl:ObjectProperty rdf:about="#possuiArtigoPublicado">
+        <rdfs:range rdf:resource="#Artigo"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Anais"/>
+                    <rdf:Description rdf:about="#Conferencia"/>
+                    <rdf:Description rdf:about="#EdicaoPeriodico"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#possuiArtigoPublicadoEmAnais -->
+
+    <owl:ObjectProperty rdf:about="#possuiArtigoPublicadoEmAnais">
+        <rdfs:domain rdf:resource="#Anais"/>
+        <rdfs:range rdf:resource="#ArtigoConferencia"/>
+        <owl:inverseOf rdf:resource="#ehPublicadoEmAnais"/>
+        <rdfs:subPropertyOf rdf:resource="#possuiArtigoPublicado"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#possuiArtigoPublicadoEmConferencia -->
+
+    <owl:ObjectProperty rdf:about="#possuiArtigoPublicadoEmConferencia">
+        <rdfs:range rdf:resource="#ArtigoConferencia"/>
+        <rdfs:domain rdf:resource="#Conferencia"/>
+        <owl:inverseOf rdf:resource="#ehPublicadoEmConferencia"/>
+        <rdfs:subPropertyOf rdf:resource="#possuiArtigoPublicado"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="#possuiEdicaoConferencia"/>
+            <rdf:Description rdf:about="#possuiAnais"/>
+            <rdf:Description rdf:about="#possuiArtigoPublicadoEmAnais"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#possuiArtigoPublicadoEmEdicaoPeriodico -->
+
+    <owl:ObjectProperty rdf:about="#possuiArtigoPublicadoEmEdicaoPeriodico">
+        <rdfs:range rdf:resource="#ArtigoPeriodico"/>
+        <rdfs:domain rdf:resource="#EdicaoPeriodico"/>
+        <owl:inverseOf rdf:resource="#ehPublicadoEmEdicaoPeriodico"/>
+        <rdfs:subPropertyOf rdf:resource="#possuiArtigoPublicado"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#possuiCapitulo -->
+
+    <owl:ObjectProperty rdf:about="#possuiCapitulo">
+        <rdfs:range rdf:resource="#Capitulo"/>
+        <rdfs:domain rdf:resource="#Livro"/>
+        <owl:inverseOf rdf:resource="#ehCapituloDoLivro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#possuiEdicaoConferencia -->
+
+    <owl:ObjectProperty rdf:about="#possuiEdicaoConferencia">
+        <rdfs:domain rdf:resource="#Conferencia"/>
+        <rdfs:range rdf:resource="#EdicaoConferencia"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#possuiEdicaoPeriodico -->
+
+    <owl:ObjectProperty rdf:about="#possuiEdicaoPeriodico">
+        <rdfs:range rdf:resource="#EdicaoPeriodico"/>
+        <rdfs:domain rdf:resource="#Periodico"/>
+        <owl:inverseOf rdf:resource="#ehEdicaoDoPeriodico"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#possuiOrientacao -->
+
+    <owl:ObjectProperty rdf:about="#possuiOrientacao">
+        <rdfs:range rdf:resource="#Orientacao"/>
+        <rdfs:domain rdf:resource="#Pesquisador"/>
+        <owl:inverseOf rdf:resource="#temOrientador"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#publicadoPor -->
+
+    <owl:ObjectProperty rdf:about="#publicadoPor">
+        <rdfs:range rdf:resource="#Pessoa"/>
+        <rdfs:domain rdf:resource="#Publicacao"/>
+        <owl:equivalentProperty rdf:resource="#temAutor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#publicou -->
+
+    <owl:ObjectProperty rdf:about="#publicou">
+        <rdfs:domain rdf:resource="#Pessoa"/>
+        <rdfs:range rdf:resource="#Publicacao"/>
+        <owl:inverseOf rdf:resource="#publicadoPor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#publicouCom -->
+
+    <owl:ObjectProperty rdf:about="#publicouCom">
+        <rdfs:range rdf:resource="#Pessoa"/>
+        <rdfs:domain rdf:resource="#Pessoa"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="#ehAutorDe"/>
+            <rdf:Description rdf:about="#temAutor"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#registradoPor -->
+
+    <owl:ObjectProperty rdf:about="#registradoPor">
+        <rdfs:domain rdf:resource="#Patente"/>
+        <rdfs:range rdf:resource="#Pessoa"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#registrou -->
+
+    <owl:ObjectProperty rdf:about="#registrou">
+        <rdfs:range rdf:resource="#Patente"/>
+        <rdfs:domain rdf:resource="#Pessoa"/>
+        <owl:inverseOf rdf:resource="#registradoPor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#sendoElaboradoPor -->
+
+    <owl:ObjectProperty rdf:about="#sendoElaboradoPor">
+        <rdfs:range rdf:resource="#Estudante"/>
+        <rdfs:domain rdf:resource="#Trabalho"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#sobOrientacaoDe -->
+
+    <owl:ObjectProperty rdf:about="#sobOrientacaoDe">
+        <rdfs:domain rdf:resource="#Publicacao"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#temAtividade -->
+
+    <owl:ObjectProperty rdf:about="#temAtividade">
+        <rdfs:domain rdf:resource="#Pessoa"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#temAutor -->
+
+    <owl:ObjectProperty rdf:about="#temAutor">
+        <rdfs:range rdf:resource="#Pessoa"/>
+        <rdfs:domain rdf:resource="#Publicacao"/>
+        <owl:inverseOf rdf:resource="#publicou"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#temCoAutor -->
+
+    <owl:ObjectProperty rdf:about="#temCoAutor">
+        <rdfs:subPropertyOf rdf:resource="#temAutor"/>
+        <owl:propertyDisjointWith rdf:resource="#temPrincipalAutor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#temDissertacaoMestrado -->
+
+    <owl:ObjectProperty rdf:about="#temDissertacaoMestrado">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="#DissertacaoMestrado"/>
+        <rdfs:domain rdf:resource="#OrientacaoMestrado"/>
+        <rdfs:subPropertyOf rdf:resource="#temTrabalho"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#temFuncionario -->
+
+    <owl:ObjectProperty rdf:about="#temFuncionario">
+        <rdfs:domain rdf:resource="#Departamento"/>
+        <rdfs:range rdf:resource="#Professor"/>
+        <rdfs:subPropertyOf rdf:resource="#ehVinculadoCom"/>
+        <owl:inverseOf rdf:resource="#trabalhaNoDepartamento"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#temOrientado -->
+
+    <owl:ObjectProperty rdf:about="#temOrientado">
+        <rdfs:range rdf:resource="#Estudante"/>
+        <rdfs:domain rdf:resource="#Orientacao"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#temOrientador -->
+
+    <owl:ObjectProperty rdf:about="#temOrientador">
+        <rdfs:domain rdf:resource="#Orientacao"/>
+        <rdfs:range rdf:resource="#Pesquisador"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#temPrincipalAutor -->
+
+    <owl:ObjectProperty rdf:about="#temPrincipalAutor">
+        <owl:inverseOf rdf:resource="#ehPrincipalAutorDe"/>
+        <rdfs:subPropertyOf rdf:resource="#temAutor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#temTeseDoutorado -->
+
+    <owl:ObjectProperty rdf:about="#temTeseDoutorado">
+        <rdfs:domain rdf:resource="#OrientacaoDoutorado"/>
+        <rdfs:range rdf:resource="#TeseDoutorado"/>
+        <rdfs:subPropertyOf rdf:resource="#temTrabalho"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#temTitulo -->
+
+    <owl:ObjectProperty rdf:about="#temTitulo">
+        <rdfs:domain rdf:resource="#Pessoa"/>
+        <rdfs:range rdf:resource="#Titulo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#temTrabalho -->
+
+    <owl:ObjectProperty rdf:about="#temTrabalho">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#Orientacao"/>
+        <rdfs:range rdf:resource="#Trabalho"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#temVinculoCom -->
+
+    <owl:ObjectProperty rdf:about="#temVinculoCom">
+        <rdfs:range rdf:resource="#Instituicao"/>
+        <rdfs:domain rdf:resource="#Pessoa"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#trabalhaNoDepartamento -->
+
+    <owl:ObjectProperty rdf:about="#trabalhaNoDepartamento">
+        <rdfs:range rdf:resource="#Departamento"/>
+        <rdfs:domain rdf:resource="#Professor"/>
+        <rdfs:subPropertyOf rdf:resource="#temVinculoCom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ISBN -->
+
+    <owl:DatatypeProperty rdf:about="#ISBN">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ISSN -->
+
+    <owl:DatatypeProperty rdf:about="#ISSN">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ambiente -->
+
+    <owl:DatatypeProperty rdf:about="#ambiente">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ano -->
+
+    <owl:DatatypeProperty rdf:about="#ano">
+        <rdfs:range rdf:resource="&xsd;gYear"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#anoDePublicacao -->
+
+    <owl:DatatypeProperty rdf:about="#anoDePublicacao">
+        <rdfs:subPropertyOf rdf:resource="#ano"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#anoDeRealizacao -->
+
+    <owl:DatatypeProperty rdf:about="#anoDeRealizacao">
+        <rdfs:subPropertyOf rdf:resource="#ano"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#cidade -->
+
+    <owl:DatatypeProperty rdf:about="#cidade">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#cidadeDoTrabalho -->
+
+    <owl:DatatypeProperty rdf:about="#cidadeDoTrabalho">
+        <rdfs:subPropertyOf rdf:resource="#cidade"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#cidadeEditora -->
+
+    <owl:DatatypeProperty rdf:about="#cidadeEditora">
+        <rdfs:subPropertyOf rdf:resource="#cidade"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#dataDePublicacao -->
+
+    <owl:DatatypeProperty rdf:about="#dataDePublicacao"/>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#disponibilidade -->
+
+    <owl:DatatypeProperty rdf:about="#disponibilidade">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#duracao -->
+
+    <owl:DatatypeProperty rdf:about="#duracao">
+        <rdfs:range rdf:resource="&xsd;unsignedInt"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#edicao -->
+
+    <owl:DatatypeProperty rdf:about="#edicao">
+        <rdfs:range rdf:resource="&xsd;unsignedInt"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#editora -->
+
+    <owl:DatatypeProperty rdf:about="#editora">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#fasciculo -->
+
+    <owl:DatatypeProperty rdf:about="#fasciculo">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#finalidade -->
+
+    <owl:DatatypeProperty rdf:about="#finalidade">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#idioma -->
+
+    <owl:DatatypeProperty rdf:about="#idioma">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#instituicao -->
+
+    <owl:DatatypeProperty rdf:about="#instituicao">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#instituicaoFinanciadora -->
+
+    <owl:DatatypeProperty rdf:about="#instituicaoFinanciadora">
+        <rdfs:subPropertyOf rdf:resource="#instituicao"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#instituicaoPromotora -->
+
+    <owl:DatatypeProperty rdf:about="#instituicaoPromotora">
+        <rdfs:subPropertyOf rdf:resource="#instituicao"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#local -->
+
+    <owl:DatatypeProperty rdf:about="#local">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#localDeApresentacao -->
+
+    <owl:DatatypeProperty rdf:about="#localDeApresentacao">
+        <rdfs:subPropertyOf rdf:resource="#local"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#localDePublicacao -->
+
+    <owl:DatatypeProperty rdf:about="#localDePublicacao">
+        <rdfs:subPropertyOf rdf:resource="#local"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#meioDeDivulgacao -->
+
+    <owl:DatatypeProperty rdf:about="#meioDeDivulgacao"/>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#natureza -->
+
+    <owl:DatatypeProperty rdf:about="#natureza"/>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#nivelDoCurso -->
+
+    <owl:DatatypeProperty rdf:about="#nivelDoCurso">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#nome -->
+
+    <owl:DatatypeProperty rdf:about="#nome">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#numeroDePaginas -->
+
+    <owl:DatatypeProperty rdf:about="#numeroDePaginas">
+        <rdfs:range rdf:resource="&xsd;unsignedInt"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#numeroDeVolumes -->
+
+    <owl:DatatypeProperty rdf:about="#numeroDeVolumes">
+        <rdfs:range rdf:resource="&xsd;unsignedInt"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#paginaFinal -->
+
+    <owl:DatatypeProperty rdf:about="#paginaFinal"/>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#paginaInicial -->
+
+    <owl:DatatypeProperty rdf:about="#paginaInicial"/>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#pais -->
+
+    <owl:DatatypeProperty rdf:about="#pais">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#paisDePublicacao -->
+
+    <owl:DatatypeProperty rdf:about="#paisDePublicacao">
+        <rdfs:subPropertyOf rdf:resource="#pais"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#periodoDePublicacao -->
+
+    <owl:DatatypeProperty rdf:about="#periodoDePublicacao">
+        <rdfs:subPropertyOf rdf:resource="#dataDePublicacao"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#plataforma -->
+
+    <owl:DatatypeProperty rdf:about="#plataforma">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#serie -->
+
+    <owl:DatatypeProperty rdf:about="#serie">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#statusOrientacao -->
+
+    <owl:DatatypeProperty rdf:about="#statusOrientacao"/>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#titulo -->
+
+    <owl:DatatypeProperty rdf:about="#titulo">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#tituloIngles -->
+
+    <owl:DatatypeProperty rdf:about="#tituloIngles">
+        <rdfs:subPropertyOf rdf:resource="#titulo"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#volume -->
+
+    <owl:DatatypeProperty rdf:about="#volume"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Anais -->
+
+    <owl:Class rdf:about="#Anais">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ehPublicadoEmEdicaoConferencia"/>
+                <owl:onClass rdf:resource="#EdicaoConferencia"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Publicacao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ApresentacaoTrabalho -->
+
+    <owl:Class rdf:about="#ApresentacaoTrabalho">
+        <rdfs:subClassOf rdf:resource="#OutrasPublicacoes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Artigo -->
+
+    <owl:Class rdf:about="#Artigo">
+        <rdfs:subClassOf rdf:resource="#Publicacao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ArtigoAceito -->
+
+    <owl:Class rdf:about="#ArtigoAceito">
+        <rdfs:subClassOf rdf:resource="#Artigo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ArtigoConferencia -->
+
+    <owl:Class rdf:about="#ArtigoConferencia">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ehPublicadoEmAnais"/>
+                <owl:someValuesFrom rdf:resource="#Anais"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Artigo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ArtigoPeriodico -->
+
+    <owl:Class rdf:about="#ArtigoPeriodico">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ehPublicadoEmEdicaoPeriodico"/>
+                <owl:someValuesFrom rdf:resource="#EdicaoPeriodico"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Artigo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Capitulo -->
+
+    <owl:Class rdf:about="#Capitulo">
+        <rdfs:subClassOf rdf:resource="#Publicacao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Conferencia -->
+
+    <owl:Class rdf:about="#Conferencia"/>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ConferenciaInternacional -->
+
+    <owl:Class rdf:about="#ConferenciaInternacional">
+        <rdfs:subClassOf rdf:resource="#Conferencia"/>
+        <owl:disjointWith rdf:resource="#ConferenciaNacional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ConferenciaLocal -->
+
+    <owl:Class rdf:about="#ConferenciaLocal">
+        <rdfs:subClassOf rdf:resource="#ConferenciaRegional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ConferenciaNacional -->
+
+    <owl:Class rdf:about="#ConferenciaNacional">
+        <rdfs:subClassOf rdf:resource="#Conferencia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#ConferenciaRegional -->
+
+    <owl:Class rdf:about="#ConferenciaRegional">
+        <rdfs:subClassOf rdf:resource="#ConferenciaNacional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#CursoMinistrado -->
+
+    <owl:Class rdf:about="#CursoMinistrado">
+        <rdfs:subClassOf rdf:resource="#OutrasPublicacoes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Departamento -->
+
+    <owl:Class rdf:about="#Departamento">
+        <rdfs:subClassOf rdf:resource="#Instituicao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#DissertacaoMestrado -->
+
+    <owl:Class rdf:about="#DissertacaoMestrado">
+        <rdfs:subClassOf rdf:resource="#Trabalho"/>
+        <owl:disjointWith rdf:resource="#TeseDoutorado"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Doutor -->
+
+    <owl:Class rdf:about="#Doutor">
+        <rdfs:subClassOf rdf:resource="#Titulo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Doutorando -->
+
+    <owl:Class rdf:about="#Doutorando">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#ehOrientadoPor"/>
+                        <owl:someValuesFrom rdf:resource="#Pesquisador"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#estahElaborando"/>
+                        <owl:someValuesFrom rdf:resource="#TeseDoutorado"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Estudante"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#EdicaoConferencia -->
+
+    <owl:Class rdf:about="#EdicaoConferencia">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#EdicaoPeriodico -->
+
+    <owl:Class rdf:about="#EdicaoPeriodico">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Estudante -->
+
+    <owl:Class rdf:about="#Estudante">
+        <rdfs:subClassOf rdf:resource="#Pessoa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#EstudanteIC -->
+
+    <owl:Class rdf:about="#EstudanteIC">
+        <rdfs:subClassOf rdf:resource="#Estudante"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Graduado -->
+
+    <owl:Class rdf:about="#Graduado">
+        <rdfs:subClassOf rdf:resource="#Titulo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Instituicao -->
+
+    <owl:Class rdf:about="#Instituicao"/>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Livro -->
+
+    <owl:Class rdf:about="#Livro">
+        <rdfs:subClassOf rdf:resource="#Publicacao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#MaterialDidatico -->
+
+    <owl:Class rdf:about="#MaterialDidatico">
+        <rdfs:subClassOf rdf:resource="#OutrasPublicacoes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Mestrando -->
+
+    <owl:Class rdf:about="#Mestrando">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#ehOrientadoPor"/>
+                        <owl:someValuesFrom rdf:resource="#Pesquisador"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#estahElaborando"/>
+                        <owl:someValuesFrom rdf:resource="#DissertacaoMestrado"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Estudante"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Mestre -->
+
+    <owl:Class rdf:about="#Mestre">
+        <rdfs:subClassOf rdf:resource="#Titulo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#OrganizacaoEvento -->
+
+    <owl:Class rdf:about="#OrganizacaoEvento">
+        <rdfs:subClassOf rdf:resource="#OutrasPublicacoes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Orientacao -->
+
+    <owl:Class rdf:about="#Orientacao"/>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#OrientacaoDoutorado -->
+
+    <owl:Class rdf:about="#OrientacaoDoutorado">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#temTeseDoutorado"/>
+                <owl:onClass rdf:resource="#TeseDoutorado"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Orientacao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#OrientacaoMestrado -->
+
+    <owl:Class rdf:about="#OrientacaoMestrado">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#temDissertacaoMestrado"/>
+                <owl:onClass rdf:resource="#DissertacaoMestrado"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Orientacao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#OrientacaoPosDoutorado -->
+
+    <owl:Class rdf:about="#OrientacaoPosDoutorado">
+        <rdfs:subClassOf rdf:resource="#Orientacao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#OutrasPublicacoes -->
+
+    <owl:Class rdf:about="#OutrasPublicacoes">
+        <rdfs:subClassOf rdf:resource="#Publicacao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Patente -->
+
+    <owl:Class rdf:about="#Patente">
+        <rdfs:subClassOf rdf:resource="#Publicacao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Periodico -->
+
+    <owl:Class rdf:about="#Periodico"/>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Pesquisador -->
+
+    <owl:Class rdf:about="#Pesquisador">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#publicou"/>
+                <owl:someValuesFrom rdf:resource="#Publicacao"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Pessoa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Pessoa -->
+
+    <owl:Class rdf:about="#Pessoa"/>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Professor -->
+
+    <owl:Class rdf:about="#Professor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#trabalhaNoDepartamento"/>
+                <owl:someValuesFrom rdf:resource="#Departamento"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#Pessoa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Publicacao -->
+
+    <owl:Class rdf:about="#Publicacao"/>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#RelatorioTecnico -->
+
+    <owl:Class rdf:about="#RelatorioTecnico">
+        <rdfs:subClassOf rdf:resource="#OutrasPublicacoes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Software -->
+
+    <owl:Class rdf:about="#Software">
+        <rdfs:subClassOf rdf:resource="#OutrasPublicacoes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#TeseDoutorado -->
+
+    <owl:Class rdf:about="#TeseDoutorado">
+        <rdfs:subClassOf rdf:resource="#Trabalho"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Texto -->
+
+    <owl:Class rdf:about="#Texto">
+        <rdfs:subClassOf rdf:resource="#Publicacao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#TextoJornal -->
+
+    <owl:Class rdf:about="#TextoJornal">
+        <rdfs:subClassOf rdf:resource="#Texto"/>
+        <owl:disjointWith rdf:resource="#TextoRevista"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#TextoRevista -->
+
+    <owl:Class rdf:about="#TextoRevista">
+        <rdfs:subClassOf rdf:resource="#Texto"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Titulo -->
+
+    <owl:Class rdf:about="#Titulo">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#Trabalho -->
+
+    <owl:Class rdf:about="#Trabalho">
+        <rdfs:subClassOf rdf:resource="#Publicacao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#TrabalhoTecnico -->
+
+    <owl:Class rdf:about="#TrabalhoTecnico">
+        <rdfs:subClassOf rdf:resource="#OutrasPublicacoes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#TituloDoutor -->
+
+    <owl:Thing rdf:about="#TituloDoutor">
+        <rdf:type rdf:resource="#Doutor"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#TituloGraduado -->
+
+    <Graduado rdf:about="#TituloGraduado">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Graduado>
+    
+
+
+    <!-- http://www.semanticlattes.com.br/curriculo#TituloMestre -->
+
+    <owl:Thing rdf:about="#TituloMestre">
+        <rdf:type rdf:resource="#Mestre"/>
+    </owl:Thing>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="#ApresentacaoTrabalho"/>
+            <rdf:Description rdf:about="#CursoMinistrado"/>
+            <rdf:Description rdf:about="#MaterialDidatico"/>
+            <rdf:Description rdf:about="#OrganizacaoEvento"/>
+            <rdf:Description rdf:about="#RelatorioTecnico"/>
+            <rdf:Description rdf:about="#Software"/>
+            <rdf:Description rdf:about="#TrabalhoTecnico"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="#Anais"/>
+            <rdf:Description rdf:about="#Artigo"/>
+            <rdf:Description rdf:about="#Capitulo"/>
+            <rdf:Description rdf:about="#Livro"/>
+            <rdf:Description rdf:about="#OutrasPublicacoes"/>
+            <rdf:Description rdf:about="#Patente"/>
+            <rdf:Description rdf:about="#Texto"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="#Doutorando"/>
+            <rdf:Description rdf:about="#EstudanteIC"/>
+            <rdf:Description rdf:about="#Mestrando"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="#ArtigoAceito"/>
+            <rdf:Description rdf:about="#ArtigoConferencia"/>
+            <rdf:Description rdf:about="#ArtigoPeriodico"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="#Conferencia"/>
+            <rdf:Description rdf:about="#EdicaoConferencia"/>
+            <rdf:Description rdf:about="#EdicaoPeriodico"/>
+            <rdf:Description rdf:about="#Instituicao"/>
+            <rdf:Description rdf:about="#Periodico"/>
+            <rdf:Description rdf:about="#Pessoa"/>
+            <rdf:Description rdf:about="#Publicacao"/>
+            <rdf:Description rdf:about="#Titulo"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="#ehOrientadorDeDoutorando"/>
+            <rdf:Description rdf:about="#ehOrientadorDeIC"/>
+            <rdf:Description rdf:about="#ehOrientadorDeMestrando"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,10 @@
+- for result in results
+  %li
+    %h4
+      - if !result['pessoa']['id']
+        #{result['pessoa']['nome']}.
+      - else
+        - link = 'http://lattes.cnpq.br/' + result['pessoa']['id']
+        %a{:href => link}
+          #{result['pessoa']['nome']}.
+    %p Citação: #{h result['pessoa']['citacao']}
