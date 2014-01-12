@@ -1,7 +1,0 @@
-@prefix lattes: http://www.semanticlattes.com.br/curriculo#
-@prefix qualis: http://qualis.capes.gov.br/qualis-capes.owl#
-[rule1:
-	(?p1 lattes:ISSN ?issn)
-	(?p2 qualis:ISSN ?issn)
-	->
-	(?p1 owl:sameAs ?p2)]

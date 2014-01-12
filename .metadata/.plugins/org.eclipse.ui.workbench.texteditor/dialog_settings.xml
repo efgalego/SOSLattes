@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="wholeword"/>
+		<item value="inconsis" key="selection"/>
+		<list key="findhistory">
+			<item value="inconsis"/>
+			<item value="producoes"/>
+			<item value="membro"/>
+			<item value="subcl"/>
+			<item value="subty"/>
+			<item value="http://www.ime.usp.br/ontolattes"/>
+			<item value="regexify"/>
+			<item value="gsub"/>
+		</list>
+	</section>
+</section>

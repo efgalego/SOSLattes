@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="44" version="2.0">
+<workbenchAdvisor/>
+<window height="744" maximized="true" width="1200" x="65" y="24">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout>
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="132" y="30"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="140" y="30"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="82" y="30"/>
+<coolItem id="com.aptana.ui.globalActionSet" itemType="typeToolBarContribution" x="188" y="30"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="96" y="30"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="84" y="30"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.aptana.editor.haml" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.aptana.editor.css" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.aptana.editor.ruby" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1359896852519" focus="true" label="Workspace - Web">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="com.aptana.editor.ruby" name="main.rb" partName="main.rb" path="/home/eduardo/Desenvolvimento/workspace/SemanticLattesWeb/main.rb" title="main.rb" tooltip="SemanticLattesWeb/main.rb" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SemanticLattesWeb/main.rb"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="12460" selectionTopPixel="5628"/>
+</editor>
+<editor id="com.aptana.editor.ruby" name="consultas_ontolattes.rb" partName="consultas_ontolattes.rb" path="/home/eduardo/Desenvolvimento/workspace/SemanticLattesWeb/lib/consultas_ontolattes.rb" title="consultas_ontolattes.rb" tooltip="SemanticLattesWeb/lib/consultas_ontolattes.rb" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SemanticLattesWeb/lib/consultas_ontolattes.rb"/>
+<editorState selectionHorizontalPixel="0" selectionLength="7" selectionOffset="9249" selectionTopPixel="3604"/>
+</editor>
+<editor id="com.aptana.editor.haml" name="orientacao.haml" partName="orientacao.haml" path="/home/eduardo/Desenvolvimento/workspace/SemanticLattesWeb/views/semantic/orientacao.haml" title="orientacao.haml" tooltip="SemanticLattesWeb/views/semantic/orientacao.haml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SemanticLattesWeb/views/semantic/orientacao.haml"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="323" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.haml" name="producoesbibliograficas.haml" partName="producoesbibliograficas.haml" path="/home/eduardo/Desenvolvimento/workspace/SemanticLattesWeb/views/producoesbibliograficas.haml" title="producoesbibliograficas.haml" tooltip="SemanticLattesWeb/views/producoesbibliograficas.haml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SemanticLattesWeb/views/producoesbibliograficas.haml"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1458" selectionTopPixel="477"/>
+</editor>
+<editor id="com.aptana.editor.haml" name="inconsistencias.haml" partName="inconsistencias.haml" path="/home/eduardo/Desenvolvimento/workspace/SemanticLattesWeb/views/inconsistencias.haml" title="inconsistencias.haml" tooltip="SemanticLattesWeb/views/inconsistencias.haml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SemanticLattesWeb/views/inconsistencias.haml"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="189" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.editor.ruby" name="question_resolver.rb" partName="question_resolver.rb" path="/home/eduardo/Desenvolvimento/workspace/SemanticLattesWeb/lib/question_resolver.rb" title="question_resolver.rb" tooltip="SemanticLattesWeb/lib/question_resolver.rb" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SemanticLattesWeb/lib/question_resolver.rb"/>
+<editorState selectionHorizontalPixel="0" selectionLength="241" selectionOffset="548" selectionTopPixel="238"/>
+</editor>
+<editor id="com.aptana.editor.haml" name="index.haml" partName="index.haml" path="/home/eduardo/Desenvolvimento/workspace/SemanticLattesWeb/views/index.haml" title="index.haml" tooltip="SemanticLattesWeb/views/index.haml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SemanticLattesWeb/views/index.haml"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="20" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="com.aptana.editor.haml" name="layout.haml" partName="layout.haml" path="/home/eduardo/Desenvolvimento/workspace/SemanticLattesWeb/views/layout.haml" title="layout.haml" tooltip="SemanticLattesWeb/views/layout.haml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SemanticLattesWeb/views/layout.haml"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1718" selectionTopPixel="537"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="1" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+<view id="com.aptana.terminal.views.terminal" partName="eduardo@eduardo-notebook: ~/Desenvolvimento/workspace/SemanticLattesWeb">
+<viewState>
+<title>eduardo@eduardo-notebook: ~/Desenvolvimento/workspace/SemanticLattesWeb</title>
+<workingDirectory>/home/eduardo/Desenvolvimento/workspace/SemanticLattesWeb</workingDirectory>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="com.aptana.explorer.view" partName="App Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" GitChangedFilesFilterEnabled="" activeProject="SemanticLattesWeb">
+<project name="SemanticLattesWeb">
+<expanded>
+<element path="/SemanticLattesWeb/lib"/>
+<element path="/SemanticLattesWeb/views"/>
+</expanded>
+<selection>
+<element path="/SemanticLattesWeb/views/layout.haml"/>
+</selection>
+</project>
+</viewState>
+</view>
+<view id="com.aptana.terminal.views.terminal:13d420c1c5d" partName="eduardo@eduardo-notebook: ~/Desenvolvimento/workspace/SemanticLattesWeb">
+<viewState>
+<title>eduardo@eduardo-notebook: ~/Desenvolvimento/workspace/SemanticLattesWeb</title>
+<workingDirectory>/home/eduardo/Desenvolvimento/workspace/SemanticLattesWeb</workingDirectory>
+</viewState>
+</view>
+</views>
+<perspectives activePart="com.aptana.editor.haml" activePerspective="com.aptana.ui.WebPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.aptana.ui.internal.WebPerspectiveFactory" id="com.aptana.ui.WebPerspective" label="Web"/>
+<alwaysOnActionSet id="com.aptana.browser.actionSet"/>
+<alwaysOnActionSet id="com.aptana.ruby.debug.ui.RubyDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="com.aptana.editor.common.presentation"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="com.aptana.js.debug.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.presentation"/>
+<alwaysOnActionSet id="com.aptana.ui.globalActionSet"/>
+<alwaysOnActionSet id="com.aptana.terminal.actionSet"/>
+<show_view_action id="com.aptana.browser.views.webbrowser"/>
+<show_view_action id="com.aptana.explorer.view"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="com.aptana.ui.io.remoteview"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="com.aptana.samples.ui.SamplesView"/>
+<show_view_action id="com.aptana.snippets.ui.views.SnippetsView"/>
+<show_view_action id="com.aptana.terminal.views.terminal"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="com.aptana.webserver.ui.view"/>
+<new_wizard_action id="com.aptana.editor.php.NewPHPProjectWizard"/>
+<new_wizard_action id="com.aptana.ui.wizards.NewWebProject"/>
+<new_wizard_action id="com.aptana.ruby.core.ui.rubyProjectWizard"/>
+<new_wizard_action id="com.aptana.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<new_wizard_action id="org.radrails.rails.ui.projectWizard"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="com.aptana.terminal.views.terminal"/>
+<view id="com.aptana.terminal.views.terminal:13d420c1c5d"/>
+<view id="com.aptana.explorer.view"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="left">
+<folder activePageID="com.aptana.explorer.view" appearance="2" expanded="2">
+<page content="com.aptana.explorer.view" label="App Explorer"/>
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="com.aptana.ui.io.remoteview" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1216103" ratio="0.5510511" ratioLeft="367" ratioRight="299" relationship="4" relative="left">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="com.aptana.terminal.views.terminal" label="eduardo@eduardo-notebook: ~/Desenvolvimento/workspace/SemanticLattesWeb"/>
+<page content="com.aptana.terminal.views.terminal:13d420c1c5d" label="eduardo@eduardo-notebook: ~/Desenvolvimento/workspace/SemanticLattesWeb"/>
+<page content="com.aptana.terminal.views.terminal:13d37e7bbd9" label="LabelNotFound"/>
+<page content="com.aptana.terminal.views.terminal:13d3c57aef9" label="LabelNotFound"/>
+<page content="com.aptana.terminal.views.terminal:13cefe98345" label="LabelNotFound"/>
+<page content="com.aptana.terminal.views.terminal:13cf993da6b" label="LabelNotFound"/>
+<page content="com.aptana.terminal.views.terminal:13cf993fe03" label="LabelNotFound"/>
+<page content="com.aptana.terminal.views.terminal:13cad3d9ca6" label="LabelNotFound"/>
+<page content="com.aptana.terminal.views.terminal:13cdfcca707" label="LabelNotFound"/>
+<page content="com.aptana.terminal.views.terminal:13cf993fe03" label="LabelNotFound"/>
+<page content="com.aptana.terminal.views.terminal:13cfa4e1ce7" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.7495784" ratioLeft="889" ratioRight="297" relationship="2" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.28527132" ratioLeft="368" ratioRight="922" relationship="2" relative="left"/>
+<info folder="true" part="terminalArea" ratio="0.7488922" ratioLeft="507" ratioRight="170" relationship="4" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2">
+<page content="com.aptana.terminal.views.terminal:13cf993fe03" label="LabelNotFound"/>
+<page content="org.eclipse.pde.runtime.LogView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.TaskList" label="LabelNotFound"/>
+<page content="com.aptana.browser.views.webbrowser" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@61e1f8" ratio="0.7488922" ratioLeft="507" ratioRight="170" relationship="4" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<page content="com.aptana.samples.ui.SamplesView" label="LabelNotFound"/>
+<page content="com.aptana.snippets.ui.views.SnippetsView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/SemanticLattesWeb/main.rb"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/SemanticLattesWeb/lib/lattes.rb"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/SemanticLattesWeb/lib/question_resolver.rb"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.haml" path="/SemanticLattesWeb/views/perguntas.haml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.haml" path="/SemanticLattesWeb/views/semantic/orientacao.haml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/SemanticLattesWeb/lib/consultas_ontolattes.rb"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/SemanticLattesWeb/lib/question_resolver.rb"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/SemanticLattesWeb/lib/lattes.rb"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/SemanticLattesWeb/lib/consultas_ontolattes.rb"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/SemanticLattesWeb/main.rb"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/SemanticLattesWeb/lib/question_resolver.rb"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/SemanticLattesWeb/main.rb"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.haml" path="/SemanticLattesWeb/views/semantic/orientacao.haml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/SemanticLattesWeb/main.rb"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/SemanticLattesWeb/lib/consultas_ontolattes.rb"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/SemanticLattesWeb/main.rb"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/SemanticLattesWeb/lib/question_resolver.rb"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" path="/SemanticLattesWeb/main.rb"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.haml" path="/SemanticLattesWeb/views/index.haml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.haml" path="/SemanticLattesWeb/views/layout.haml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.haml" path="/SemanticLattesWeb/views/layout.haml"/>
+</editors>
+<item historyLabel="main.rb" index="0">
+<position info="not_deleted" x="18674" y="0"/>
+</item>
+<item historyLabel="lattes.rb" index="1">
+<position info="not_deleted" x="15569" y="17"/>
+</item>
+<item historyLabel="question_resolver.rb" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="question_resolver.rb" index="2">
+<position info="not_deleted" x="6305" y="0"/>
+</item>
+<item historyLabel="main.rb" index="0">
+<position info="not_deleted" x="18674" y="0"/>
+</item>
+<item historyLabel="main.rb" index="0">
+<position info="not_deleted" x="18360" y="1"/>
+</item>
+<item historyLabel="question_resolver.rb" index="2">
+<position info="not_deleted" x="5584" y="0"/>
+</item>
+<item historyLabel="lattes.rb" index="1">
+<position info="not_deleted" x="15569" y="17"/>
+</item>
+<item historyLabel="main.rb" index="0">
+<position info="not_deleted" x="18360" y="1"/>
+</item>
+<item historyLabel="main.rb" index="0">
+<position info="not_deleted" x="12966" y="0"/>
+</item>
+<item historyLabel="main.rb" index="0">
+<position/>
+</item>
+<item historyLabel="question_resolver.rb" index="2">
+<position info="not_deleted" x="5584" y="0"/>
+</item>
+<item historyLabel="main.rb" index="0">
+<position info="not_deleted" x="12764" y="0"/>
+</item>
+<item historyLabel="question_resolver.rb" index="2">
+<position info="not_deleted" x="6569" y="0"/>
+</item>
+<item historyLabel="main.rb" index="0">
+<position info="not_deleted" x="12764" y="0"/>
+</item>
+<item historyLabel="main.rb" index="0">
+<position info="not_deleted" x="12985" y="0"/>
+</item>
+<item historyLabel="question_resolver.rb" index="2">
+<position info="not_deleted" x="6449" y="0"/>
+</item>
+<item historyLabel="perguntas.haml" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="orientacao.haml" index="4">
+<position info="not_deleted" x="291" y="0"/>
+</item>
+<item historyLabel="perguntas.haml" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="question_resolver.rb" index="2">
+<position info="not_deleted" x="6449" y="0"/>
+</item>
+<item historyLabel="consultas_ontolattes.rb" index="5">
+<position info="not_deleted" x="3729" y="42"/>
+</item>
+<item historyLabel="question_resolver.rb" index="2">
+<position info="not_deleted" x="7162" y="473"/>
+</item>
+<item historyLabel="main.rb" index="0">
+<position info="not_deleted" x="16194" y="0"/>
+</item>
+<item historyLabel="question_resolver.rb" index="2">
+<position info="not_deleted" x="7635" y="0"/>
+</item>
+<item historyLabel="main.rb" index="0">
+<position info="not_deleted" x="16194" y="0"/>
+</item>
+<item historyLabel="question_resolver.rb" index="6">
+<position info="not_deleted" x="7635" y="0"/>
+</item>
+<item historyLabel="lattes.rb" index="7">
+<position info="not_deleted" x="15569" y="17"/>
+</item>
+<item historyLabel="consultas_ontolattes.rb" index="8">
+<position info="not_deleted" x="3729" y="42"/>
+</item>
+<item historyLabel="main.rb" index="9">
+<position info="not_deleted" x="16207" y="0"/>
+</item>
+<item historyLabel="question_resolver.rb" index="10">
+<position info="not_deleted" x="7635" y="0"/>
+</item>
+<item historyLabel="consultas_ontolattes.rb" index="8">
+<position info="not_deleted" x="3462" y="0"/>
+</item>
+<item historyLabel="main.rb" index="11">
+<position info="not_deleted" x="3162" y="0"/>
+</item>
+<item historyLabel="consultas_ontolattes.rb" index="8">
+<position info="not_deleted" x="557" y="21"/>
+</item>
+<item historyLabel="orientacao.haml" index="12">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.rb" index="13">
+<position info="not_deleted" x="3162" y="0"/>
+</item>
+<item historyLabel="consultas_ontolattes.rb" index="14">
+<position info="not_deleted" x="6738" y="0"/>
+</item>
+<item historyLabel="consultas_ontolattes.rb" index="14">
+<position info="not_deleted" x="10773" y="21"/>
+</item>
+<item historyLabel="consultas_ontolattes.rb" index="14">
+<position info="not_deleted" x="10869" y="0"/>
+</item>
+<item historyLabel="consultas_ontolattes.rb" index="14">
+<position info="not_deleted" x="11881" y="15"/>
+</item>
+<item historyLabel="consultas_ontolattes.rb" index="14">
+<position info="not_deleted" x="10871" y="0"/>
+</item>
+<item historyLabel="consultas_ontolattes.rb" index="14">
+<position info="not_deleted" x="11881" y="15"/>
+</item>
+<item historyLabel="main.rb" index="15">
+<position info="not_deleted" x="8610" y="0"/>
+</item>
+<item historyLabel="consultas_ontolattes.rb" index="14">
+<position info="not_deleted" x="6347" y="29"/>
+</item>
+<item historyLabel="question_resolver.rb" index="16">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.rb" index="17">
+<position info="not_deleted" x="8610" y="0"/>
+</item>
+<item historyLabel="index.haml" index="18">
+<position info="not_deleted" x="20" y="0"/>
+</item>
+<item historyLabel="layout.haml" index="19">
+<position info="not_deleted" x="1260" y="0"/>
+</item>
+<item historyLabel="main.rb" index="17">
+<position info="not_deleted" x="8610" y="0"/>
+</item>
+<item active="true" historyLabel="layout.haml" index="20">
+<position info="not_deleted" x="1254" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="left"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
+</trimArea>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@1216103"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.haml" name="layout.haml" tooltip="SemanticLattesWeb/views/layout.haml">
+<persistable path="/SemanticLattesWeb/views/layout.haml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.haml" name="index.haml" tooltip="SemanticLattesWeb/views/index.haml">
+<persistable path="/SemanticLattesWeb/views/index.haml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="question_resolver.rb" tooltip="SemanticLattesWeb/lib/question_resolver.rb">
+<persistable path="/SemanticLattesWeb/lib/question_resolver.rb"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.haml" name="inconsistencias.haml" tooltip="SemanticLattesWeb/views/inconsistencias.haml">
+<persistable path="/SemanticLattesWeb/views/inconsistencias.haml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.haml" name="producoesbibliograficas.haml" tooltip="SemanticLattesWeb/views/producoesbibliograficas.haml">
+<persistable path="/SemanticLattesWeb/views/producoesbibliograficas.haml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.haml" name="orientacao.haml" tooltip="SemanticLattesWeb/views/semantic/orientacao.haml">
+<persistable path="/SemanticLattesWeb/views/semantic/orientacao.haml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="consultas_ontolattes.rb" tooltip="SemanticLattesWeb/lib/consultas_ontolattes.rb">
+<persistable path="/SemanticLattesWeb/lib/consultas_ontolattes.rb"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="main.rb" tooltip="SemanticLattesWeb/main.rb">
+<persistable path="/SemanticLattesWeb/main.rb"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.haml" name="perguntas.haml" tooltip="SemanticLattesWeb/views/perguntas.haml">
+<persistable path="/SemanticLattesWeb/views/perguntas.haml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="lattes.rb" tooltip="SemanticLattesWeb/lib/lattes.rb">
+<persistable path="/SemanticLattesWeb/lib/lattes.rb"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="lattes_ontology.rb" tooltip="SemanticLattesWeb/lib/lattes_ontology.rb">
+<persistable path="/SemanticLattesWeb/lib/lattes_ontology.rb"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.ruby" name="converter.rb" tooltip="SemanticLattesWeb/lib/converter.rb">
+<persistable path="/SemanticLattesWeb/lib/converter.rb"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.haml" name="formacao.haml" tooltip="SemanticLattesWeb/views/formacao.haml">
+<persistable path="/SemanticLattesWeb/views/formacao.haml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.haml" name="membros.haml" tooltip="SemanticLattesWeb/views/membros.haml">
+<persistable path="/SemanticLattesWeb/views/membros.haml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.haml" name="pessoas.haml" tooltip="SemanticLattesWeb/views/semantic/pessoas.haml">
+<persistable path="/SemanticLattesWeb/views/semantic/pessoas.haml"/>
+</file>
+</mruList>
+</workbench>

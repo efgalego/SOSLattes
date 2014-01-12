@@ -1,7 +1,0 @@
-strict graph grafo1 {
-	graph [bb="0,0,146,72", id=grafo1, overlap=False];
-	node [label="\N", fontsize=8, shape=rectangle, style=filled];
-	0 [label="Renata Wassermann [1]", URL="http://lattes.cnpq.br/8548608291351316", color="#003399", fontcolor="#FFFFFF", height="0.25", pos="73,63", width="1.6389"];
-	1 [label="Paulo de T. Guerra Oliveira [1]", URL="http://lattes.cnpq.br/5228033768526863", color="#003399", fontcolor="#FFFFFF", height="0.25", pos="73,9", width="2.0278"];
-	0 -- 1 [pos="73,53.594 73,43.683 73,28.169 73,18.298"];
-}
